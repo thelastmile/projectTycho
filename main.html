@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Test</title>
+		<script type="text/javascript" src="d3/d3.v3.js"></script>
+		<script type="text/javascript" src="dist/dimple.v2.0.0.min.js"></script>
+		<link href="build/nv.d3.css" rel="stylesheet" type="text/css">
+    <script src="lib/stream_layers.js"></script>
+    <script src="build/nv.d3.js"></script>
+    <script src="build/tooltip.js"></script>
+		<link rel="stylesheet" href="bootstrap-3.3.5/css/bootstrap.css"/>
+		<link rel="stylesheet" href="bootstrap-3.3.5/css/bootstrap-theme.min.css" />
+		<link rel="stylesheet" href= "css/script2.css"/>
+	</head>
+	<body>
+
+	<div class="col-md-2 first"><!--first column-->
+	</div><!--end first column-->
+
+	<div class="col-md-9 second"><!--second column-->
+		
+		<div class="row"><!--first row-->
+			<div class="col-md-12">
+			</div>
+		</div><!--end first row-->
+		
+		<div class="row"><!--second row-->
+			<div class="col-md-12 but-row">
+				<button id="pox-btn" class="btn btn-default btn-sm chicken">Chicken Pox Animation</button>
+				<button class="btn btn-default btn-sm">Measles Animation</button>
+				<button class="btn btn-default btn-sm">Influenza Animation</button>
+				<button class="btn btn-default btn-sm">Polio Animation</button>
+				<a href="landingPage.html"class="btn btn-primary btn-sm" role="button">Back</a></a>
+			</div>
+		</div><!--end second row-->
+		
+		<div class="row"><!-- third row-->
+			<div class="col-md-12 board">
+
+				<div id="data-box" class="col-md-6 hidden">
+					<p id="value"></p>
+					<p id="value-two"></p>
+					<p id="value-three"></p>
+				</div>
+
+				<div id="post-vaccine" class="col-md-4 post-vaccine">
+						<p id="post-txt"></p>
+						<p id="post2-txt"></p>
+				</div>
+
+				<div id="cases" class="col-md-6 cases"></div>
+				<div class="col-md-3 seasons"></div>
+				<div id="year" class="col-md-6 year"></div>
+				<div class="col-md-6 disease-discription">
+					<p id="sickness" class="disease-txt"></p>
+					<progress id="prog" value="0" min="0" max="220"></progress>
+				</div>
+			</div><!--end board -->
+
+		</div><!--end third row-->
+		
+		<div class="row"><!--end fourth row-->
+			<div class="col-md-12 slider">
+				<input id="sldr" class="slid" type="range" value="0" min="0" max="220"/>
+				<p id="slider-label"><span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Use Slider to Access Data&nbsp;<span class="glyphicon glyphicon-arrow-right"></span></p>
+			</div>
+		</div><!--end fourth row-->
+		
+		<div class="row"><!-- fifth row-->
+			<div class="col-md-12 fifth-row">
+				<div id="some-info" class="col-md-2">
+					<img id="sym2-pic" width="160" src="" alt="Skin Symptoms"/>	
+				</div>
+
+				<div class="col-md-7">
+					<p class="description-txt">Welcome to the chickenpox page. Press animation button above to show animation from 1972-2013 or use slider to manually scroll through the years<p/>
+					<span>Source:&nbsp;</span><a id="source" href="">Center for Disease Control</a>
+				</p>
+				
+				</div>
+				<div class="col-md-3 disease-pic">
+					<img id="sym-pic" width='200px' src="images/influenza_kid.jpg" alt="Picture of disease victim"/>
+				</div>
+			</div>
+		</div><!--end fifth row-->
+		
+		<div class="row"><!--six row-->
+			<div id="chart" class='with-3d-shadow with-transitions'>
+			</div>
+		</div><!--end sixth row-->
+
+	</div><!--end second column-->
+	
+		<!--third column-->
+	<div class="col-md-1 third"></div>
+
+		<script type="text/javascript" src="jquery-2.1.3/jquery.js"></script>
+		<script type="text/javascript" src="bootstrap-3.3.5/js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/underscore.js"></script>
+		<script type="text/javascript" src="js/tyco_script.js"></script>
+	</body>
+</html>
