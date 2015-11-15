@@ -1,0 +1,199 @@
+@-webkit-viewport {width: device-width; scale: 1; }
+@-moz-viewport {width: device-width; scale: 1; }
+@-ms-viewport {width: device-width; scale: 1; }
+@-o-viewport {width: device-width; scale: 1; }
+@viewport {width: device-width; scale: 1; }
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*landing page css*/
+
+div .jumbotron {
+	text-align: center;
+}
+
+h1 {
+	text-align: center;
+	font-family: "Norasi";
+}
+
+h2 {
+	font-family: "Sawasdee";
+}
+
+h4 {
+
+	margin: auto;
+}
+
+a {
+	font-family: "Kinnari";
+}
+
+p {
+	text-align: center;
+}
+
+#footerLogos {
+	text-align: center;
+}
+#title {
+	font-size: 50px;
+	font-family: "Kinnari";
+	text-align: center;
+	color: #DC143C;
+}
+
+/*test page css*/
+.board {
+	margin-top: -.14%;
+	width: 100%;
+	height: 491px;
+	padding: 0;
+	text-align: center;
+	background-color: #222;
+}
+.cities {
+	fill: #FF5D5D;
+}
+.animation {
+	text-align: center;
+	margin: auto;
+}
+
+/*main page css*/
+
+ *{
+	/*border: 1px solid red !important;*/
+} 
+
+@media only screen and (max-width: 900px) {
+	.side-bar {
+		display: none;
+	}
+}
+
+/*@media only print and (max-width: 500px) {
+	.side-bar {
+		display: none;
+	}
+}*/
+
+body {
+	font-family: helvetica;
+	background-color: #000;
+}
+
+.main {
+	/*margin-top: .6%;*/
+	/*border-radius: 10px;*/
+	/*background-color: white;*/
+}
+
+.banner {
+	color: white;
+	margin-top: 3.9%;
+	font-size: 100%;
+	max-height: 100%;
+	background-color: #080808
+}
+nav > .container-fluid {
+	background-color: #111150;
+}
+.navbar {
+	margin-bottom: 0;
+	border: none;
+}
+.navbar-default .navbar-nav > li > a{
+	color: #fff;
+	letter-spacing: .1em;
+	font-size: 100%;
+	font-weight: 700;
+
+}
+
+.navbar-default .navbar-brand {
+	color: #ff0000;
+}
+
+.navbar-default .navbar-nav > .active > a {
+	color: #222;
+	letter-spacing: .1em;
+	font-size: 100%;
+	font-weight: 700;
+
+}
+
+.Polio,
+.Measels,
+.ChickenPox,
+.Influenza {
+	background-color: #111150;
+	/*width: 17%;*/
+	padding: 20px;
+}
+
+.Polio{
+	margin-left: 2%;
+}
+
+.ChickenPox {
+	/*width: 17%;*/
+}
+
+.Influenza {
+	/*width: 15%;*/
+}
+
+.Measels,
+.ChickenPox,
+.Influenza {
+	margin-left: 9%;
+}
+
+.clear {
+	clear: both;
+	/*height: 15.5em;*/
+}
+.slider {
+	/*height: 2em;*/
+	background-color: #000;
+	padding: 0;
+	margin: 0;
+}
+.five {
+	background-color: #222;
+	height: 11.6em;
+}
+.compare {
+	color: white;
+	background-color: #111150;
+	height: 2em;
+	width: 25%;
+	padding-top: .3em;
+	margin-top: .2em;
+	margin-bottom: .2em;
+	margin-left: auto;
+	margin-right: auto;
+}
+.six {
+	background-color: #080808;
+	height: 11em;
+}
+.text-graph {
+}
+
+.photo {
+	height: 100%;
+	
+}
+
+.side-bar {
+	max-height: 100%;
+	/*background-color: blue;*/
+}
