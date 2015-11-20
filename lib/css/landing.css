@@ -1,0 +1,107 @@
+/* ///////////////////////all css select ///////////////////////////*/
+
+@-webkit-viewport {width: device-width; scale: 1; }
+@-moz-viewport {width: device-width; scale: 1; }
+@-ms-viewport {width: device-width; scale: 1; }
+@-o-viewport {width: device-width; scale: 1; }
+@viewport {width: device-width; scale: 1; }
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+@font-face {
+font-family: 'Museo-700';
+src: url('../Museo/Museo_Slab_700.otf'); 
+}
+@font-face {
+font-family: 'Museoitalic';
+src: url('../Museo/Museo_Slab_500italic.otf'); 
+}
+
+@font-face {
+font-family: 'Museo-500';
+src: url('../Museo/exljbris - MuseoSans-500.otf'); 
+}
+
+
+img {
+	height: 100%;
+}
+
+body {
+	background-color: #ffffff;
+	font-size: 100%;
+	font-family: 'Museo-500', 'Museo-700', 'Museoitalic';
+}
+
+
+/*
+=================================================
+landing page
+=================================================
+*/
+.jumbotron {
+	background-color: #8de2ec;
+	min-height: 700px;
+	margin-bottom: 1em;
+	padding: .1em;
+}
+
+.lnd-con {
+	background-color: #fff;
+}
+
+.hold-carousel {
+	position: relative;
+}
+
+.ft-text {
+	position: absolute;
+	z-index: 1;
+	font-family: Museo-700;
+	padding: 10px;
+	color: #605E61;
+	background-color: rgba(253, 245, 245, 0.6);
+	font-size: 2rem;
+	margin: 0;
+
+}
+.clear {
+	clear: both;
+}
+
+.carousel-control {
+	font-size: 650%;
+	padding-top: 12%;
+}
+
+.carousel-caption {
+	color: white;
+	text-shadow: -3px -3px #4682B4;
+}
+
+.plotts{
+	fill: #50e3c2;
+}
+.animation {
+	position: relative;
+}
+
+.footer-logos {
+	text-align: center;
+}
+
+.btn-row {
+	margin-top: 10px;
+	text-align: center;
+}
+.shadow {
+	-webkit-filter: drop-shadow( -7px -7px 5px #000);
+		 -moz-filter:drop-shadow( -7px -7px 5px #000);
+				  filter: drop-shadow( -7px -7px 5px #000);
+}

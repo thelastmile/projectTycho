@@ -1,0 +1,393 @@
+@-webkit-viewport {width: device-width; scale: 1; }
+@-moz-viewport {width: device-width; scale: 1; }
+@-ms-viewport {width: device-width; scale: 1; }
+@-o-viewport {width: device-width; scale: 1; }
+@viewport {width: device-width; scale: 1; }
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: helvetica;
+	background-color: #8de2ec;
+	font-size: 100%;
+	padding-top: 2%;
+}
+
+hr {
+	border: .1em solid grey;
+}
+
+/*
+==========================================================
+Kate's css suggestions
+==========================================================
+*/
+
+.header {
+	font-family: Museo-700;
+	font-size: 18px;
+	color: #4e4d4e;
+	line-height: 22px;
+}
+
+.sub-header {
+	font-family: Museoitalic;
+	font-size: 14px;
+	color: #605e61;
+	letter-spacing: 1px;
+	line-height: 17px;
+}
+
+.body-copy {
+	font-family: MuseoSans-500;
+	font-size: 15px;
+	color: #6f6c71;
+	letter-spacing: 1.07px;
+	line-height: 18px;
+}
+
+/*
+==========================================================
+end of Kate's css suggestions
+==========================================================
+*/
+
+/*
+==========================================================
+Modals
+==========================================================
+*/
+/*pox*/
+.pox-header1 {
+	font-family: Museo-700;
+	font-size: 230%;
+	color: #4e4d4e;
+	line-height: 22px;
+}
+
+.pox-header2 {
+	font-family: Museoitalic;
+	font-size: 130%;
+	color: #605e61;
+	letter-spacing: 1px;
+	line-height: 17px;
+}
+
+.body-copy {
+	font-family: MuseoSans-500;
+	font-size: 15px;
+	color: #6f6c71;
+	letter-spacing: 1.07px;
+	line-height: 18px;
+}
+/*measles*/
+.measles-header1 {
+	font-family: Museo-700;
+	font-size: 250%;
+	color: #4e4d4e;
+	line-height: 22px;
+}
+
+.measles-header2 {
+	font-family: Museoitalic;
+	font-size: 14px;
+	color: #605e61;
+	letter-spacing: 1px;
+	line-height: 17px;
+}
+
+.body-copy {
+	font-family: MuseoSans-500;
+	font-size: 15px;
+	color: #6f6c71;
+	letter-spacing: 1.07px;
+	line-height: 18px;
+}
+/*flu*/
+.flu-header1 {
+	font-family: Museo-700;
+	font-size: 250%;
+	color: #4e4d4e;
+	line-height: 22px;
+}
+
+.fu-header2 {
+	font-family: Museoitalic;
+	font-size: 14px;
+	color: #605e61;
+	letter-spacing: 1px;
+	line-height: 17px;
+}
+
+.body-copy {
+	font-family: MuseoSans-500;
+	font-size: 15px;
+	color: #6f6c71;
+	letter-spacing: 1.07px;
+	line-height: 18px;
+}
+/*polio*/
+.header {
+	font-family: Museo-700;
+	font-size: 18px;
+	color: #4e4d4e;
+	line-height: 22px;
+}
+
+.sub-header {
+	font-family: Museoitalic;
+	font-size: 14px;
+	color: #605e61;
+	letter-spacing: 1px;
+	line-height: 17px;
+}
+
+.body-copy {
+	font-family: MuseoSans-500;
+	font-size: 15px;
+	color: #6f6c71;
+	letter-spacing: 1.07px;
+	line-height: 18px;
+}
+
+/*
+==========================================================
+end modals
+==========================================================
+*/
+
+/*landing page css*/
+
+
+#footerLogos {
+	text-align: center;
+}
+#title {
+	font-size: 50px;
+	font-family: "Kinnari";
+	text-align: center;
+	color: #DC143C;
+}
+
+/*test page css*/
+.board {
+	margin-top: -.14%;
+	width: 100%;
+	height: 491px;
+	padding: 0;
+	text-align: center;
+}
+.cities {
+	fill: #FF5D5D;
+}
+.animation {
+	text-align: center;
+	margin: auto;
+}
+
+/*main page css*/
+
+ *{
+	/*border: 1px solid red !important;*/
+} 
+
+@media only screen and (max-width: 900px) {
+	.side-bar {
+		display: none;
+	}
+	
+}
+
+/*@media only print and (max-width: 500px) {
+	.side-bar {
+		display: none;
+	}
+}*/
+
+.main {
+	/*margin-top: .6%;*/
+	/*border-radius: 10px;*/
+	/*background-color: white;*/
+}
+
+.banner {
+	color: white;
+	margin-top: 3.9%;
+	font-size: 100%;
+	max-height: 100%;
+	background-color: #080808
+}
+
+/*
+=================================================
+navigation/buttons
+=================================================
+*/
+.navbar {
+	margin-bottom: 0;
+	border: none;
+}
+.navbar-default .navbar-nav > li > a{
+	color: #fff;
+	letter-spacing: .2em;
+	font-size: 1.7em;
+	font-weight: 700;
+
+}
+
+.navbar-default .navbar-brand {
+	color: #ff0000;
+}
+
+.selections {
+	width: 100%;
+	padding: 7% 0 7% 23%;
+}
+
+
+.polio,
+.measles,
+.chickenpox,
+.influenza {
+	border-right: .15em solid white; 
+	width: 70%;
+}
+.info {
+	width: 25%;
+	padding-left: 3.5%;
+}
+
+
+.chckPx-info {
+	background-color: rgba(80, 226, 193, 0.20);
+	border: 2px solid #50e3c2;
+	border-radius: 2px; 
+}
+
+.chckPx-info:active {
+	background-color: #50e3c2;
+}
+
+.mesls-info {
+	background-color: rgba(158, 218, 97, 0.20);
+	border: 2px solid #9eda62;
+	border-radius: 2px;
+}
+
+.mesls-info:active {
+	background-color: #9eda62;
+}
+
+.flu-info {
+	background-color: rgba(74, 144, 226, 0.20);
+	border: 2px solid #4a90e2;
+	border-radius: 2px;
+}
+.flu-info:active {
+	background-color: #4a90e2;
+}
+
+.plio-info {
+	background-color: rgba(212, 78, 239, 0.20);
+	border: 2px solid #d44ff0;
+	border-radius: 2px;
+}
+
+.plio-info:active {
+	background-color: #d44ff0;
+}
+
+@media only screen and (max-width: 420px) {
+.polio,
+.measles,
+.chickenpox,
+.influenza {
+	border-right: .1em solid white; 
+	font-size: 1.7em;
+	width: 80%;
+
+	}
+	.info {
+		width: 20%;
+		font-size: 1.7em;
+	}
+	.selections {
+		margin-left: 1%;
+		margin-bottom: 1%;
+		padding: 0;
+		padding-right: 3%;
+	}
+
+}
+/*
+===========================================
+end of Navigation buttons
+===========================================
+*/
+
+.slider {
+	padding: 0;
+	margin-top: 8.7em;
+	margin-bottom: 2.8em;
+}
+.five {
+	background-color: rgb(217, 237, 247);
+}
+.compare {
+	color: white;
+	background-color: #111150;
+	border: none;
+	border-radius: 2em;
+	box-shadow: 0;
+	width: 100%;
+	padding: .3em;
+	margin-top: .2em;
+	margin-bottom: 1em;
+}
+.six {
+	background-color: #fff;
+}
+.panel-label {
+	padding: .5%;
+}
+.seven {
+	background-color: #fff;
+	height: 16em;
+}
+
+@media only screen and (max-width: 420px) {
+	
+}
+
+.text-graph {
+}
+
+.photo {
+	height: 100%;
+	
+}
+
+.side-bar {
+	max-height: 100%;
+	/*background-color: blue;*/
+}
+
+@media only screen and (max-width: 420px) {
+	.board {
+		height: 200px;
+		padding-top: 2em;
+	}
+	
+	.seven {
+		height: 13em;
+	}
+
+	.home {
+		display: none;
+	}
+}

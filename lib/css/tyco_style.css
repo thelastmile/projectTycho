@@ -1,0 +1,951 @@
+/* ///////////////////////all css select ///////////////////////////*/
+
+@-webkit-viewport {width: device-width; scale: 1; }
+@-moz-viewport {width: device-width; scale: 1; }
+@-ms-viewport {width: device-width; scale: 1; }
+@-o-viewport {width: device-width; scale: 1; }
+@viewport {width: device-width; scale: 1; }
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+@font-face {
+font-family: 'Museo-700';
+src: url('../Museo/Museo_Slab_700.otf'); 
+}
+@font-face {
+font-family: 'Museoitalic';
+src: url('../Museo/Museo_Slab_500italic.otf'); 
+}
+
+@font-face {
+font-family: 'Museo-500';
+src: url('../Museo/exljbris - MuseoSans-500.otf'); 
+}
+
+
+img {
+	width: 100%;
+}
+
+body {
+	font-size: 100%;
+	font-family: 'Museo-500', 'Museo-700', 'Museoitalic';
+}
+
+
+/*
+=================================================
+landing page
+=================================================
+*/
+.jumbotron {
+	background-color: #8de2ec;
+	min-height: 700px;
+	margin-bottom: 1em;
+	padding: .1em;
+}
+
+.lnd-con {
+	background-color: #fff;
+}
+
+.hold-carousel {
+	position: relative;
+}
+
+.ft-text {
+	position: absolute;
+	z-index: 1;
+	font-family: Museo-700;
+	padding: 10px;
+	color: #605E61;
+	background-color: rgba(253, 245, 245, 0.7);
+	font-size: 20%;
+	margin: 0;
+
+}
+
+.carousel-control {
+	font-size: 650%;
+	padding-top: 12%;
+}
+
+.carousel-caption {
+	color: white;
+	text-shadow: -3px -3px #4682B4;
+}
+
+.plotts{
+	fill: #50e3c2;
+}
+.animation {
+	margin-left: 20%;
+	position: relative;
+}
+
+.footer-logos {
+	text-align: center;
+}
+
+.btn-row {
+	margin-top: 10px;
+	text-align: center;
+}
+
+/*
+=================================================
+navigation / buttons
+=================================================
+*/
+
+.nav-row {
+	margin-top: 20px;
+}
+.navbar {
+	margin-bottom: 0;
+	border: none;
+	width: 80%;
+	margin-left: 10%;
+}
+.head {
+	margin-left: 6.5%;
+}
+.navbar-default {
+	background-image: none;
+	background-color: #FFFFFF;
+	border: 1px solid #fff;
+}
+.navbar-default .navbar-nav > li > a{
+	color: grey;
+	letter-spacing: .2em;
+	font-size: 1.7em;
+	font-weight: 700;
+
+}
+.navbar-default .navbar-brand {
+	color: #ff0000;
+}
+
+.navbar-default .navbar-nav > .active > a {
+	color: #222;
+	letter-spacing: .1em;
+	font-size: 100%;
+	font-weight: 700;
+
+}
+
+.selections {
+	width: 100%;
+	padding: 0 0 7% 23%;
+}
+
+
+.polio,
+.measles,
+.chickenpox,
+.influenza {
+	border-right: .15em solid white; 
+	width: 50%;
+	color: #fff;
+}
+.info {
+	width: 25%;
+	padding-left: 3.5%;
+	color: #fff;
+}
+
+
+.chckPx-info {
+	background-color: rgba(80, 226, 193, 0.20);
+	border: 2px solid #50e3c2;
+	color: #50e3c2;
+	border-radius: 2px; 
+}
+.navbar-collapse button.poxSelected#pox-page {
+	background-color: #50e3c2;
+	color:#605E61;
+}
+.mesls-info {
+	background-color: rgba(158, 218, 97, 0.20);
+	border: 2px solid #9eda62;
+	border-radius: 2px;
+	color: #9eda62;
+}
+
+.navbar-collapse button.poxSelected#measles-page {
+	background-color: #9eda62;
+	color:#605E61;
+}
+
+.flu-info {
+	background-color: rgba(74, 144, 226, 0.20);
+	border: 2px solid #4a90e2;
+	border-radius: 2px;
+	color: #4090e2;
+}
+.navbar-collapse button.poxSelected#flu-page {
+	background-color: #4a90e2;
+	color:#605E61;
+}
+.plio-info {
+	background-color: rgba(212, 78, 239, 0.20);
+	border: 2px solid #d44ff0;
+	border-radius: 2px;
+	color: #d44ff0;
+}
+
+.navbar-collapse button.poxSelected#polio-page {
+	background-color: #d44ff0;
+	color:#605E61;
+}
+
+/*
+=================================================
+columns
+=================================================
+*/
+
+.clear {
+	clear: both;
+}
+
+.five {
+	min-height: 168px;
+}
+.middle {
+	background-color: #8de2ec;
+}
+.six {
+	background-color: #ffffff;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+/*
+=================================================
+circles formating
+=================================================
+*/
+
+.percs {
+	fill: #50e3c2;
+}
+.percs:hover {
+	fill: #00FFC6;
+}
+.mercs {
+	fill: #9eda62;
+}
+
+.mercs:hover {
+	fill: #81FC06;
+}
+
+.lercs {
+	fill: #d44ff0;
+}
+
+.lercs:hover {
+	fill: #D300FF;
+}
+
+.fercs {
+	fill: #4a90e2;
+}
+
+.fercs:hover {
+	fill: #0075FF;
+}
+
+.red {
+	position: absolute;
+	z-index: 2;
+}
+
+.comps {
+	fill: red;
+}
+/*
+=================================================
+board section
+=================================================
+*/
+.board {
+	margin-top: -.14%;
+	background-color: #8de2ec;
+	position:relative;
+	min-height: 430px;
+	text-align: center;
+}
+
+.stats-holder {
+ position: absolute;
+ top: 90px;
+ left: 40px;
+ text-align: center;
+ font-family: Museo-700;
+ min-height: 406px;
+}
+.legend-holder {
+ position: absolute;
+ top: 90px;
+ right: 40px;
+ text-align: center;
+ font-family: Museo-700;
+}
+.disease-txt {
+	color: rgba(225, 127, 14, 0.9);
+	font-size: 2.5rem;
+	font-weight: bold;
+}
+.dates {
+	font-size: 4rem;
+	color: #605E61;
+}
+
+.year {
+	margin-top: 10px;
+	text-align: center;
+	font-size: 4rem;
+	color: #605E61;
+}
+
+.seasons {
+	text-align: center;
+	margin-top: 20px;
+	font-size: 3rem;
+	color: #605E61;
+	min-height: 30px;
+	border: 1px solid #ffffff; 
+}
+
+.cases {
+	text-align: center;
+	font-size: 4rem;
+	color: #605E61;
+	margin-top: 10px;
+}
+
+#data-box {
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 160px;
+	height: 70px;
+	border-radius: 20px;
+	border: 2px solid #605e61;
+	font-family: Museoitalic;
+	font-size: 1.3rem;
+	color: #605E61;
+	padding-top: 2px;
+	background-color: rgba(141, 226, 236, 0.7);
+	z-index: 2;
+}
+
+#data-box > p {
+	margin: 0;
+}
+
+.anm {
+	color: #000;
+	margin-right: 15px;
+	background-color: rgba(225, 127, 14, 0.6);
+}
+.anm:hover {
+	color: #000;
+	background-color: rgba(225, 127, 14, 1);
+
+}
+.legend {
+	font-family: Museoitalic;
+	font-size: 1.5rem;
+	color: #605E61;
+}
+.cir {
+	background-color: #8de2ec;
+}
+
+.circle-one {
+	height: 80px;
+	width: 80px;
+	border-radius: 50%;
+	padding: 10px;
+}
+
+.circle-two {
+	height: 65px;
+	width: 65px;
+	border-radius: 50%;
+	padding: 10px;
+	margin-left: 6%;
+}
+
+.circle-three{
+	margin-left: 5px;
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	padding: 10px;
+	margin-left: 16%;
+}
+
+.circle-four {
+	padding: 10px;
+	height: 35px;
+	width: 35px;
+	border-radius: 50%;
+	margin-left: 23%;
+}
+
+.circle-five {
+	padding: 10px;
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	margin-left: 31%;
+}
+
+/*
+=================================================
+slider section
+=================================================
+*/
+.slider {
+	position: relative;
+	background-color: #8de2ec;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	height: 81px;
+	padding-left: 1%;
+}
+
+.pre-Text {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+}
+
+.post-Text {
+	text-align: right;
+	padding-right: 10%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+.sub-header {
+	font-family: Museoitalic;
+	font-size: 14px;
+	color: #605E61;
+	letter-spacing: 1px;
+	line-height: 17px;
+}
+
+
+#slider-label {
+	position: absolute;
+	left: 3%;
+	color: #605E61;
+	font-family: Museoitalic;
+	font-size: 10px;
+	bottom: 25px;
+}
+#poxValue {
+	display: inline;
+}
+
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent; /* Hides the slider so custom styles can be added */
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 18px 0;
+  width: 100%;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #ffffff; /*///background-color for chrome///*/
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #B71C1C;/*pointer color*/
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -14px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #4a90e2; /*//active color//*/
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #ffffff; /*///////////slider color firefox////////*/
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+  background: #2a6495;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+input[type=range]::-ms-fill-upper {
+  background: #3071a9;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+  background: #3071a9;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+  background: #367ebd;
+}
+
+/* ============================================================================================================================
+ pointer for vaccine dates
+ ============================================================================================================================
+*/
+.pox-triangle {
+	 position: absolute;
+  left: 52%;
+  top: -80px;
+}
+.polio-triangle {
+	position: absolute;
+  left: 58%;
+  top: -80px;
+}
+.measles-triangle {
+	position: absolute;
+  left: 45%;
+  top: -80px;
+}
+
+.triangle-isosceles {
+
+  padding:15px;
+  margin:1em 0 3em;
+  color:#ffffff;
+  font-family: Museo-500;
+  font-size: 12px;
+  background:#EF5350; /* default background for browsers without gradient support */
+  /* css3 */
+  background:-webkit-gradient(linear, 0 0, 0 100%, from(#EF5350), to(#B71C1C));
+  background:-moz-linear-gradient( #EF5350, #B71C1C);
+  background:-o-linear-gradient(#EF5350, #B71C1C);
+  background:linear-gradient( #EF5350, #B71C1C);
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+  z-index: 2;
+}
+.triangle-isosceles.top {
+  background:-webkit-gradient(linear, 0 0, 0 100%, from(#EF5350), to(#B71C1C));
+  background:-moz-linear-gradient(#EF5350, #B71C1C);
+  background:-o-linear-gradient(#EF5350, #B71C1C);
+  background:linear-gradient(#EF5350, #B71C1C);
+}
+/* creates triangle */
+.triangle-isosceles:after {
+  content:"";
+  position:absolute;
+  bottom: -15px; /* value = - border-top-width - border-bottom-width */
+  left:50px; /* controls horizontal position */
+  border-width:15px 15px 0; /* vary these values to change the angle of the vertex */
+  border-style:solid;
+  border-color:#B71C1C transparent;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+
+/*
+=================================================
+info section
+=================================================
+*/
+.header {
+	font-family: Museo-700;
+	font-size: 18px;
+	color: #4e4d4e;
+	line-height: 22px;
+}
+.txt-panel {
+	padding-top: 20px;
+	opacity: 0.89;
+	background: #ffffff;
+	/*border: 1px solid #ffffff;*/
+	/*box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.20);*/
+	border-radius: 2px;
+}
+.bodytwo {
+	font-family: MuseoSans-500;
+	font-size: 22px;
+	color: #6f6c71;
+	letter-spacing: 1.07px;
+	line-height: 22px;
+}
+
+.photo {
+	float:right;
+	width: 13%;
+}
+.photo-two {
+	float: left;
+	width: 6%;
+	padding-right: 10px;
+}
+
+.home-btn {
+	padding-top: 2em;
+}
+.modal-link {
+	float: right;
+	font-family: Museo-700;
+  font-size: 18px;
+}
+.pox {
+	color: #50e3c2;
+}
+.msls {
+	color: #9eda62;
+}
+
+.flu {
+	color: #4a90e2;
+}
+.pol {
+	color: #d44ff0;
+}
+/*
+=================================================
+svg axis
+=================================================
+*/
+
+.shadow {
+	-webkit-filter: drop-shadow( -5px -5px 5px #605E61);
+		 -moz-filter:drop-shadow( -5px -5px 5px #605E61);
+				  filter: drop-shadow( -5px -5px 5px #605E61);
+}
+.axis text {
+  font-family: Museo-700;
+  font-size: 18px;
+  fill: #605E61;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+	stroke: #605E61;
+	shape-rendering: crispEdges;	
+}
+/*
+=================================================
+bottom svg
+=================================================
+*/
+.poxchart text {
+	fill: #605E61;
+	font-family: Museo-700;
+  font-size: 11px;
+}
+.nvd3 .nv-axis line {
+    fill: none;
+    stroke: #6CC3CD;
+    shape-rendering: crispEdges;
+}
+.graph-btn {
+	margin: 5px;
+	border-radius: 50%;
+}
+.vaccine-date {
+	font-family: Museo-700;
+	font-size: 1.7rem;
+	color: #ffffff;
+}
+
+.zoom {
+	margin: 5px;
+	padding-top: 8px;
+	font-family: Museo-700;
+  font-size: 2rem;
+	color: #605E61;
+}
+/*
+=================================================
+modals
+=================================================
+*/
+
+.body-copy {
+	font-family: MuseoSans-500;
+	font-size: 15px;
+	color: #6f6c71;
+	letter-spacing: 1.07px;
+	line-height: 18px;
+}
+
+.modal-header {
+	padding: 10px 15px 8px 15px;
+}
+
+.cdc-attribution {
+	margin: 0;
+	padding-top: .3em;
+}
+
+.virus-footer {
+	border-top: .1em solid gray;
+	/*padding-bottom: .5em;*/
+}
+
+.modal-row {
+	padding-left: .3em;
+	padding-top: .4em;
+	padding-bottom: 0;
+}
+
+.pox-frame {
+	background-color: rgba(255, 255, 255, 0.90);
+	/*border: 2px solid #50e3c2;*/
+	border-radius: 2px; 
+}
+
+.pox-header1 {
+	font-family: Museo-700;
+	font-size: 250%;
+	color: #50e3c2;
+	line-height: 22px;
+}
+
+.pox-header2 {
+	font-family: Museoitalic;
+	font-size: 130%;
+	color: #50e3c2;
+	letter-spacing: 1px;
+	line-height: 17px;
+}
+
+.pox-pic {
+	margin-top: .5em;
+	/*border: 2px solid #50e3c2;*/
+	padding: 0;
+}
+
+
+/*measles*/
+.measles-frame {
+	background-color: rgba(255, 255, 255, 0.90);
+	/*border: 2px solid #9eda62;*/
+	border-radius: 2px;
+}
+.measles-header1 {
+	font-family: Museo-700;
+	font-size: 250%;
+	color: #9eda62;
+	line-height: 22px;
+}
+
+.measles-header2 {
+	font-family: Museoitalic;
+	font-size: 130%;
+	color: #9eda62;
+	letter-spacing: 1px;
+	line-height: 17px;
+}
+ .measles-pic {
+ 	margin-top: 1em;
+	/*border: 1px solid #9eda62;*/
+	padding: 0;	
+ }
+.
+/*flu*/
+
+.flu-frame {
+	background-color: rgba(255, 255, 255, 0.90);
+	/*border: 2px solid #4a90e2;*/
+	border-radius: 2px;
+}
+
+.flu-header1 {
+	font-family: Museo-700;
+	font-size: 250%;
+	color: #4a90e2;
+	line-height: 22px;
+}
+
+.flu-header2 {
+	font-family: Museoitalic;
+	font-size: 130%;
+	color: #4a90e2;
+	letter-spacing: 1px;
+	line-height: 17px;
+}
+
+.flu-pic {
+ 	margin-top: 2em;
+	/*border: 1px solid #4a90e2;*/
+	padding: 0;	
+ }
+
+
+/*polio*/
+.polio-frame {
+	background-color: rgba(255, 255, 255, 0.90);
+	/*border: 2px solid #d44ff0;*/
+	border-radius: 2px;
+}
+.polio-header1 {
+	font-family: Museo-700;
+	font-size: 250%;
+	color: #d44ff0;
+	line-height: 22px;
+}
+
+.polio-header2 {
+	font-family: Museoitalic;
+	font-size: 130%;
+	color: #d44ff0;
+	letter-spacing: 1px;
+	line-height: 17px;
+}
+
+.polio-pic {
+	margin-top: .8em;
+	/*border: 1px solid #d44ff0;*/
+	padding: 0;
+}
+/*
+=================================================
+7370 page
+=================================================
+*/
+.footer {
+	position: fixed;
+	bottom: 20px;
+}
+
+/*
+=================================================
+media queries
+=================================================
+*/
+@media only screen and (min-width: 375px) {
+	.animation {
+		margin-left: 20%;
+		
+	}
+}
+
+@media only screen and (min-width: 1300px) {
+	.animation {
+		margin-left: 33%;
+		
+	}
+}
+
+@media only screen and (max-width: 420px) {
+.polio,
+.measles,
+.chickenpox,
+.influenza {
+	font-size: 1.7em;
+	width: 100%;
+
+	}
+	.info {
+		width: 20%;
+		font-size: 1.7em;
+	}
+	.selections {
+		margin-left: 1%;
+		margin-bottom: 1%;
+		padding: 0;
+		padding-right: 3%;
+	}
+
+}
+
