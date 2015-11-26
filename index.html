@@ -18,9 +18,10 @@
 			<div class="col-md-12 middle">
 				
 				<div class="row nav-row"> <!-- second row-->
-					<nav class="navbar navbar-default" role="navigation">		  
+					<nav class="navbar navbar-default" role="navigation">	
+
 					    <!-- Buttons get grouped for better mobile display -->
-					    <h5 class="header head">Disease</h5>
+					    <h5 class="header head">DISEASE</h5>
 					    <div class="navbar-header">
 					      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 					        <span class="sr-only">Toggle navigation</span>
@@ -33,22 +34,22 @@
 					      <div class="row"><!-- button row -->
 							  	<div class=" col-md-3">
 							        <div class="btn-group selections">
-										<button id="pox-page" value="false" type="button" class="btn chckPx-info chickenpox">Chickenpox</button>
+										<button id="pox-page" value="false" type="button" class="btn chckPx-info chickenpox header">Chickenpox</button>
 									</div>
 								</div>
 								<div class=" col-md-3">
 									<div class="btn-group selections">
-										<button id="measles-page" type="button" class="btn mesls-info measles">Measles</button>		
+										<button id="measles-page" type="button" class="btn mesls-info measles header">Measles</button>		
 									</div>
 								</div>
 								<div class=" col-md-3">
 							        <div class="btn-group selections">
-										<button id="flu-page" type="button" class="btn flu-info influenza">Influenza</button>		
+										<button id="flu-page" type="button" class="btn flu-info influenza header">Influenza</button>		
 									</div>
 								</div>
 								<div class=" col-md-3">
 									<div class="btn-group selections">
-										<button id="polio-page" type="button" class="btn plio-info polio">Polio</button>
+										<button id="polio-page" type="button" class="btn plio-info polio header">Polio</button>
 
 									</div>
 								</div>
@@ -59,49 +60,53 @@
 
 				<div class="row"><!-- third row -->
 					<div class="col-md-12 board">
-						<div class="col-xs-12 col-md-2 stats-holder shadow hidden">
-								<div class="panel panel-default">
+							<div class="col-xs-12 col-md-2 stats-holder hidden">
+									<div class="panel">
+										<div class="panel-heading">
+											<p class="header">Monthly National Cases</p>
+										</div>
+										<div class="panel-body">
+											<div class="col-12-md">
+												<span id="seasons" class="sub-header seasons"></span>	
+												<span id="year" class="sub-header"></span>
+											</div>
+											<div id="cases" class="cases"></div>
+										</div><!--end panel body-->
+									</div><!--end panel-->				
+							</div><!--stats holder end-->
+							
+							<div class="col-md-2 legend-holder hidden">
+								<div class="panel">
 									<div class="panel-heading">
-										<p class="header">Data</p>
+										<h6 class="header">Map Legend</h6>
 									</div>
 									<div class="panel-body">
-										<p class="header">National Cases</p>
-										<div id="cases" class="cases"></div>
-										<div id="year" class="year"></div>
-										<div id="seasons" class="seasons"></div>	
+										<table class="table">
+											<tbody class="body-copy">
+												<tr><th></th><th scope="col" colspan="2"># of Cases</th></tr>
+												<tr><td><p class="cir circle-one"></p></td><td>=</td><td class="table-data">1500+</td></tr>
+												<tr><td><p class="cir circle-two"></p></td><td>=</td><td class="table-data">500 - 1500</td></tr>
+												<tr><td><p class="cir circle-three"></p></td><td>=</td><td class="table-data">300 - 500</td></tr>
+												<tr><td><p class="cir circle-four"></p></td><td>=</td><td class="table-data">100 - 300</td></tr>
+												<tr><td><p class="cir circle-five"></p></td><td>=</td><td class="table-data">0 - 100</td></tr>
+											</tbody>
+										</table>
 									</div><!--end panel body-->
-								</div><!--end panel-->				
-						</div><!--stats holder end-->
-						
-						<div class="col-md-2 legend-holder shadow hidden">
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h6 class="header">Map Legend</h6>
-								</div>
-								<div class="panel-body">
-									<table>
-										<tbody class="legend">
-											<tr><th># of Cases</th></tr>
-											<tr><td><p class="cir circle-one"></p></td><td>= 1500+</td></tr>
-											<tr><td><p class="cir circle-two"></p></td><td>= 500 - 1500</td></tr>
-											<tr><td><p class="cir circle-three"></p></td><td>= 300 - 500</td></tr>
-											<tr><td><p class="cir circle-four"></p></td><td>= 100 - 300</td></tr>
-											<tr><td><p class="cir circle-five"></p></td><td>= 0 - 100</td></tr>
-										</tbody>
-									</table>
-								</div><!--end panel body-->
-							</div><!--end panel-->	
-						</div><!--end col-->
+								</div><!--end panel-->	
+							</div><!--end col-->
+							
 
-						
-						
-						
+							<div id="data-box" class="col-md-2 triangle-border right hidden">
+								<p id="value" class="header"></p>
+								<p id="value-two" class="bodytwo"></p>
+								<p id="value-three" class="bodytwo"></p>
+							</div>
 
-						<div id="data-box" class="col-md-6 hidden">
-							<p id="value"></p>
-							<p id="value-two"></p>
-							<p id="value-three"></p>
-						</div>
+							<div id="data-box-two" class="col-md-2 triangle-border right hidden">
+								<p id="val" class="header"></p>
+								<p id="val-two" class="bodytwo"></p>
+								<p id="val-three" class="bodytwo"></p>
+							</div>
 						
 					</div><!--end board-->
 				</div><!-- end of third row -->
@@ -117,13 +122,13 @@
 									<p id="post-txt" class="sub-header"></p>
 								</div>
 
-									<span id="poxCompare" class="pox-triangle triangle-isosceles top hidden vaccine-date">Vaccine Introduced 1995</span>
+									<span id="poxCompare" class="pox-triangle triangle-isosceles top hidden">Vaccine Introduced 1995</span>
 
-									<span id="measlesCompare" class="measles-triangle triangle-isosceles top hidden vaccine-date">Vaccine Introduced 1963</span>
+									<span id="measlesCompare" class="measles-triangle triangle-isosceles top hidden">Vaccine Introduced 1963<P class="copy">Select to Compare</P></span>
 
-									<span id="fluCompare" class="measles-triangle triangle-isosceles hidden vaccine-date">Vaccine Changes Yearly</span>
+									<span id="fluCompare" class="flu-triangle triangle-isosceles hidden">Vaccine Changes Yearly</span>
 
-									<span id="polioCompare" class="polio-triangle triangle-isosceles top hidden vaccine-date">Vaccine Introduced 1955</span>			
+									<span id="polioCompare" class="polio-triangle triangle-isosceles top hidden">Vaccine Introduced 1955<P class="copy">Select to Compare</P></span>			
 
 						</div>
 
@@ -132,7 +137,7 @@
 						<input id="sldr-two" class="sldr-two" type="range" value="0" min="0" max="866"/>
 						<input id="sldr-three" class="sldr-three" type="range" value="0" min="0" max="530"/>
 						<input id="sldr-four" class="sldr-four" type="range" value="0" min="0" max="289"/>
-						<input id="sldr-five" class="sldr-five" type="range" value="0" min="0" max="130"/>
+						<input id="sldr-five" class="sldr-five" type="range" value="0" min="0" max="11"/>
 
 						<div id="slider-svg"></div>
 					 </div><!-- end slider row -->
@@ -141,8 +146,8 @@
 			</div><!-- end of middle column -->
 				<div class="row clear five hidden">	
 						<div class="col-md-12 txt-panel">
-							<div class="col-md-1 home-btn"><a href="http://www.tycho.pitt.edu">
-								<img class="img-responsive" src="images/img-button-home.png"></a>
+							<div class="col-md-1"><a href="landingPage.html">
+								<img class="home-btn" class="img-responsive" src="images/img-button-home.png"></a>
 							</div>
 
 							<div class="col-md-9">
@@ -153,9 +158,9 @@
 								<p id="description-txt" class="bodytwo"></p>
 
 								<a id="link-pox" class="modal-link pox hidden" data-toggle="modal" data-target="#chickenPox">Learn More...</a>
-								<a id="link-msls" class="modal-link msls hidden" data-toggle="modal" data-target="#measles">Learn More...</a>
-								<a id="link-flu" class="modal-link flu hidden" data-toggle="modal" data-target="#influenza">Learn More...</a>
-								<a id="link-polio" class="modal-link pol hidden" data-toggle="modal" data-target="#polio">Learn More....</a>
+								<a id="link-msls" class="modal-link msls  hidden" data-toggle="modal" data-target="#measles">Learn More...</a>
+								<a id="link-flu" class="modal-link flu  hidden" data-toggle="modal" data-target="#influenza">Learn More...</a>
+								<a id="link-polio" class="modal-link pol  hidden" data-toggle="modal" data-target="#polio">Learn More....</a>
 							</div>
 
 							<div class="col-md-2">
@@ -170,7 +175,8 @@
 					<div class="col-12">
 						<div id="chartZoom">
 							<button id="zoomIn" type="button" class="btn btn-xs graph-btn"><span class="glyphicon glyphicon-plus-sign"></span></button><span class="zoom">Zoom</span>
-							<button id="zoomOut"type="button" class="btn btn-xs graph-btn"><span class="glyphicon glyphicon-minus-sign"></span></button>	
+							<button id="zoomOut"type="button" class="btn btn-xs graph-btn"><span class="glyphicon glyphicon-minus-sign"></span></button>
+							 <center><span class="header">Yearly National Cases</span></center>	
 						</div>
 						<div id="chart1" class='with-transitions'>
 						<svg></svg>
