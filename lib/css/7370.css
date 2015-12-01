@@ -1,0 +1,61 @@
+/*
+=================================================
+about us
+=================================================
+*/
+body {
+	background-color: #424242;
+	font-size: 100%;
+}
+
+
+.wrapper {
+	font-family: arial;
+	color: #ffffff;
+	font-size: 1.6em;
+	height: 100%;
+}
+.first-word {
+	font-family: sawasdee;
+	font-weight: 100;
+	color: #ffffff;
+}
+.second-word {
+	font-family: arial;
+	font-weight: bold;
+	color: #6cc3cd;
+}
+.our-pics {
+	width: 125px;
+	float: right;
+	padding-left: 10px;
+	width: 130px;
+	border: 1px solid #171717;
+}
+
+.white-panel {
+	background-color: #616161;
+}
+
+.panel-gray {
+	background-color: #212121;	
+}
+.footer {
+	width: 100%;
+	position: fixed; 
+	bottom: 0;
+}
+.bottom-row {
+	min-height: 40px;
+	background-color: #616161;
+}
+.bottom-margin {
+	height: 10em;
+	background-color: #212121;
+}
+
+.home-btn {
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 3.5rem;
+}
