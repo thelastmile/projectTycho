@@ -1,65 +1,677 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Landing Page</title>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Main Page</title>
+		<link type="text/css" rel="stylesheet" href="lib/css/nv.d3.css">
+		<script type="text/javascript" src="lib/js/d3.v3.js"></script>
+		<script type="text/javascript" src="lib/js/nv.d3.min.js"></script>
 		<link type="text/css" rel="stylesheet" href="lib/bootstrap-3.3.5/css/bootstrap.css"/>
 		<link type="text/css" rel="stylesheet" href="lib/bootstrap-3.3.5/css/bootstrap-theme.min.css" />
-    <link rel="stylesheet" href= "lib/css/script.css"/>
+		<link type="text/css" rel="stylesheet" href= "lib/css/tyco_style.css"/>
+		<link type="text/css" rel="stylesheet" href= "lib/css/mediaqueries.css"/>
+	</head>
+	<body>
+			<div class="col-md-12 middle">	
+				<div class="row nav-row"> <!-- second row-->
+					<nav class="navbar navbar-default" role="navigation">	
+					    <!-- Buttons get grouped for better mobile display -->
+					    <h5 class="header head">DISEASE</h5>
+					    <div class="navbar-header">
+					      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					        <span class="sr-only">Toggle navigation</span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					      </button>    
+					    </div>
+					    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					      <div class="row"><!-- button row -->
+							  	<div class=" col-md-3">
+							        <div class="btn-group selections">
+												<button id="measles-page" type="button" class="btn mesls-info">Measles</button>		
+											</div>
+								</div>
+								<div class=" col-md-3">
+									<div class="btn-group selections">
+										<button id="polio-page" type="button" class="btn plio-info">Polio</button>
+									</div>
+								</div>
+								<div class=" col-md-3">
+							    <div class="btn-group selections">
+										<button id="pox-page" value="false" type="button" class="btn chckPx-info">Chickenpox</button>
+									</div>
+								</div>
+								<div class=" col-md-3">
+									<div class="btn-group selections">
+										<button id="flu-page" type="button" class="btn flu-info">Influenza</button>		
+									</div>
+								</div>
+					      </div><!-- end of button row -->
+					    </div><!-- /.navbar-collapse -->  
+					</nav>
+				</div><!-- end of second row -->
+				<div class="row"><!-- third row -->
+					<div class="col-md-12 board">
+							<div class="col-md-2 stats-holder hidden">
+									<div class="panel">
+										<div class="panel-heading">
+											<p class="header">MONTHLY NATIONAL CASES</p>
+										</div>
+										<div class="panel-body">
+											<div class="col-12-md">
+												<span id="seasons" class="sub-header seasons"></span>	
+												<span id="year" class="sub-header"></span>
+											</div>
+											<div id="cases" class="cases"></div>
+										</div><!--end panel body-->
+									</div><!--end panel-->				
+							</div><!--stats holder end-->
+							<div class="col-md-2 stats-holder-two hidden">
+									<div class="panel">
+										<div class="panel-heading">
+											<p class="header">YEAR IN COMPARISON</p>
+										</div>
+										<div class="panel-body">
+											<p class="sub-header">Pre-Vaccine Cases</p>
+											<div id="cases-one" class="cases"></div>
+											<p class="sub-header">Post-Vaccine Cases</p>
+											<div id="cases-two" class="cases"></div>
+										</div><!--end panel body-->
+									</div><!--end panel-->				
+							</div><!--stats holder-two end-->
+							<div class="col-md-2 legend-holder hidden">
+								<div class="panel">
+									<div class="panel-heading">
+										<h6 class="header">MAP LEGEND</h6>
+									</div>
+									<div class="panel-body">
+										<table class="table">
+											<tbody class="body-copy">
+												<tr><th></th><th scope="col" colspan="2"># of Cases</th></tr>
+												<tr><td><p class="cir circle-one"></p></td><td>=</td><td class="table-data">1500+</td></tr>
+												<tr><td><p class="cir circle-two"></p></td><td>=</td><td class="table-data">500 - 1500</td></tr>
+												<tr><td><p class="cir circle-three"></p></td><td>=</td><td class="table-data">300 - 500</td></tr>
+												<tr><td><p class="cir circle-four"></p></td><td>=</td><td class="table-data">100 - 300</td></tr>
+												<tr><td><p class="cir circle-five"></p></td><td>=</td><td class="table-data">0 - 100</td></tr>
+											</tbody>
+										</table>
+									</div><!--end panel body-->
+								</div><!--end panel-->	
+							</div><!--end col-->
+							<div id="data-box" class="col-md-2 triangle-border right hidden">
+								<p id="value" class="header"></p>
+								<p id="value-two" class="bodytwo"></p>
+								<p id="value-three" class="bodytwo"></p>
+							</div>
+							<div id="data-box-two" class="col-md-2 triangle-border right hidden">
+								<p id="val" class="header"></p>
+								<span id="val-two" class="tip"></span>&nbsp;
+								<span id="val-four" class="tip"></span>
+								<p id="val-three" class="bodytwo"></p>
+							</div>
+							<div class="col-xs-2 col-md-2 btn-container"></div>
+					</div><!--end board-->
+				</div><!-- end of third row -->
+				<div class="row"><!-- forth row -->
+					<div class="col-md-12 slider">
+						<div class="col-md-12 slider-info">
+								<div class="col-xs-4 col-md-4 pre-Text">
+									<p id="pre-txt" class="sub-header"></p>
+								</div>
+								<div class="col-xs-4 col-md-4 mid-Text">
+									<p id="mid-txt" class="sub-header"></p>
+								</div>
+								<div class="col-xs-4 col-md-4 post-Text">
+									<p id="post-txt" class="sub-header"></p>
+								</div>
+									<span id="measlesCompare" class="measles-triangle triangle-isosceles top hidden">Vaccine Introduced 1963
+										<P class="copy ">Compare</P>
+									</span>
+									<span id="poxCompare" class="pox-triangle triangle-isosceles top hidden">Vaccine Introduced 1995</span>
+									<span id="measlesCompare" class="measles-triangle triangle-isosceles top hidden">Vaccine Introduced 1963<P class="copy">Compare</P></span>
+									<span id="polioCompare" class="polio-triangle triangle-isosceles top hidden">Vaccine Introduced 1955<P class="copy">Compare</P></span>			
+						</div>
+						<input id="sldr" class="slid" type="range" step="1" value="0" min="0" max="219"/>
+						<input id="sldr-two" class="sldr-two" type="range" value="0" min="0" max="866"/>
+						<input id="sldr-three" class="sldr-three" type="range" value="0" min="0" max="530"/>
+						<input id="sldr-four" class="sldr-four" type="range" value="0" min="0" max="289"/>
+						<input id="sldr-five" class="sldr-five" type="range" value="0" min="0" max="11"/>
+						<div id="slider-svg"></div>
+					 </div><!-- end slider row -->
+				</div><!-- end of forth row -->
+				<!-- fifth row -->
+			</div><!-- end of middle column -->
+				<div class="row clear five hidden">	
+						<div class="col-md-12 txt-panel">
+							<div class="col-xs-3 col-md-1"><a href="index.html">
+								<img class="home-btn" class="img-responsive" src="images/img-button-home.png"f></a>
+							</div>
+							<div class="col-xs-8 col-md-9">
+								<div class="col-md-12">
+									<a id="link-pox" class="modal-link pox hidden" data-toggle="modal" data-target="#chickenPox"><p>ABOUT CHICKENPOX...</p></a>
+									<a id="link-msls" class="modal-link msls  hidden" data-toggle="modal" data-target="#measles"><p>ABOUT MEASLES...</p></a>
+									<a id="link-flu" class="modal-link flu  hidden" data-toggle="modal" data-target="#influenza"><p>ABOUT FLU...</p></a>
+									<a id="link-polio" class="modal-link pol  hidden" data-toggle="modal" data-target="#polio"><p>ABOUT POLIO....</p></a>
+								</div>
+								<div id="welcome-txt" class="bodytwo hidden">
+									<p class="header">ABOUT DISEASES</p>
+									<p>Welcome to the childhood disease page. Please select a disease from
+									the navigation bar to learn more about each disease. You can use the slider to scroll through the years of data to explore the history of the disease in the United States.</p>
+								</div>
+								<p id="description-txt" class="bodytwo"></p>
+							</div>
+							<div class="col-md-2 welcome-pic">
+								<img id="sym-pic" class="img-responsive" src="images/alldiseases.png">
+							</div>
+					</div>
+				</div>
+				<!-- fifth row -->
+				<div class="row six clear hidden"><!-- sixth row -->
+					<div class="col-12">
+						<div id="chartZoom">
+							<button id="zoomIn" type="button" class="btn btn-xs graph-btn"><span class="glyphicon glyphicon-plus-sign"></span></button><span class="zoom">Zoom</span>
+							<button id="zoomOut"type="button" class="btn btn-xs graph-btn"><span class="glyphicon glyphicon-minus-sign"></span></button>
+							 <center><span class="header">YEARLY NATIONAL CASES</span></center>	
+						</div>
+						<div id="chart1" class='with-transitions'>
+						<svg></svg>
+						</div>
+					</div>
+				</div><!-- end sixth of row -->
+<!-- Modals ////////////////////////////////////////////////////////////////////////////// --> 
+<div class="modal fade bs-example-modal-lg" id="chickenPox" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content pox-frame">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+							<h4 class="modal-title pox-header1" id="myModalLabel">Chickenpox and the Vaccine (Shot) to Prevent It</h4>
+							<h6 class="cdc-attribution">Information provided by the Center for Disease Control. Last updated February 2014</h6>
+						</div>
+						<div class="modal-body body-copy">
+							<div class="row"><!-- Chickenpox first row -->
+								<div class="col-md-6"><!-- Chickenpox first col first row -->
+									<span class="pox-header2">CHICKEN POX INFORMATION</span>
+								<br>
+								<br>
+									<h4 class="pox-header2">What is chickenpox?</h4>
+										<span>Chickenpox is a disease that causes an itchy rash of blisters
+										and a fever. A person with chickenpox may have a lot
+										of blisters – as many as 500. The rash can spread over the
+										whole body—even inside the mouth, eyelids, or genital
+										area. Chickenpox can be serious and even life-threatening,
+										especially in babies, adults, and people with weakened
+										immune systems.</span>
+								<br>
+								<br>
+								<div class="row">
+									<div class="col-md-1"></div>
+									<div class="col-md-10 pox-pic">
+										<img src="images/ChickenpoxModal.png" class="img-responsive modal-pics">
+									</div>
+								</div>
+									<h4 class="pox-header2">What are the symptoms of chickenpox?</h4>
+										<span>Chickenpox usually causes the following symptoms:</span>
+									<ul>
+										<li>An itchy rash of blisters</li>
+										<li>Fever</li>
+										<li>Headache</li>
+										<li>Feeling tired</li>
+									</ul>
+									<h4 class="pox-header2">Is it serious?</h4>
+										<span>Chickenpox is usually mild in children, but the itching can be very uncomfortable. Children with chickenpox can miss up to one week of school or childcare.
+										Before the vaccine was available, about 4 million people got chickenpox each year in the United States. About 10,600 of those people were hospitalized, and 100 to 150 died each year.
+										In some cases, chickenpox can cause serious problems, such as:</span>
+									<ul>
+										<li>Skin infections</li>
+										<li>Dehydration (not having enough water in the body)</li>
+										<li>Pneumonia (an infection in the lungs)</li>
+										<li>Swelling of the brain</li>
+									</ul>
+								</div><!-- end Chickenpox first col first row -->
+								<div class="col-md-6"><!-- Chickenpox second col first row -->
+									<h4 class="pox-header2">How does chickenpox spread?</h4>
+										<span>Chickenpox spreads easily through the air when a person who has chickenpox coughs or sneezes. It can also spread by touching an infected person’s blisters.</span>
+										<span> Chickenpox can be spread 1 to 2 days before the infected person gets a rash until all the blisters have formed scabs.</span>
+									<br>
+									<br>
+									<h4 class="pox-header2">Why not let my child get chickenpox naturally and build natural immunity?</h4>
+										<span>Chickenpox can be a mild disease, but it isn’t always. There’s no way to know who will have a mild case and who will become very sick. When your child gets his or her chickenpox shots, he or she is getting immunity from chickenpox without the risk of serious complications of the disease.</span>
+									<br>
+									<br>
+									<h4 class="pox-header2">How can I protect my child from chickenpox</h4>
+									<span>The best way to protect against chickenpox is by getting the chickenpox (also called varicella) shot. Doctors recommend
+									that all children who have never had
+									chickenpox get the shot. Why should my child get the chickenpox
+									shot?</span>
+									<span>The chickenpox shot:</span>
+									<ul>
+										<li>Protects your child from chickenpox, a potentially
+										serious and even deadly disease</li>
+										<li>Prevents your child from feeling itchy and
+										uncomfortable from chickenpox</li>
+										<li>Keeps your child from missing school or childcare
+										(and keeps you from missing work to care for your
+										sick child)</li>
+									</ul>
+									<h4 class="pox-header2">Is the chickenpox shot safe?</h4>
+										<span>Yes. The chickenpox shot is very safe, and it works very
+										well to prevent chickenpox. Vaccines, like any medicine,
+										can have side effects, but most children who get the
+										chickenpox shot have no side effects.</span>
+								<br>
+									<h4 class="pox-header2">What are the side effects?</h4>
+										<span>Most children don’t have any side effects from the shot.
+										However, some children may develop a reaction and
+										symptoms may include:</span>
+									<ul>
+										<li>Soreness, redness, or swelling where the shot
+										was given</li>
+										<li>Fever</li>
+										<li>Mild rash...</li>
+									</ul>
+									<div class="row">
+										<div class="col-md-3"></div>
+										<div class="col-md-5 pox-pic">
+											<!-- <img src="images/chicpox2.jpg" class="img-responsive modal-pics"> -->
+										</div>
+									</div>
+								</div><!-- end Chickenpox second col first row -->
+							</div><!-- end Chickenpox first row -->
+					<footer class="virus-footer">
+						<div class="row modal-row">
+							<div class="col-md-10">
+								<span>To learn more about the chickenpox shot, talk to your child’s doctor, call 1-800-CDC-INFO, or visit <a href="#">www.cdc.gov/vaccines/parents</a>.</span>
+							</div>
+							<div class="col-md-2">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+				 	</footer>
+				</div>
+			  </div>
+			</div>		
+		</div><!-- end Chickenpox modal -->
+		<div class="modal fade bs-example-modal-lg" id="measles" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content measles-frame">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+							<h4 class="modal-title measles-header1" id="myModalLabel">Measles and the Vaccine (Shot) to Prevent It</h4><h6 class="cdc-attribution">Information provided by the Center for Disease Control. <br>Last updated July 2015</h6>
+						</div>
+						<div class="modal-body body-copy">
+							<div class="row"><!--Measles first row-->
+								<div class="col-md-6"><!-- Measles first col first row --> 
+
+									<span class="measles-header2">MEASLES INFORMATION</span>
+								<br>
+								<br> 
+									<span><em>The best way to protect against measles is to get the measles-mumps-rubella shot (called the MMR shot). Doctors recommend that all children get the MMR shot.</em></span>
+								<br>
+								<br>
+
+									<span class="measles-header2">What is measles?</span>
+								<br>
+								<br>
+									<span>Measles is a serious respiratory disease (in the lungs and breathing tubes) that causes a rash and fever. It is very contagious. In rare cases, it can be deadly.</span>
+								<br>
+								<br>
+									<span class="measles-header2">What are the symptoms of measles?</span>
+								<br>
+								<br>
+									<span>Measles starts with a fever that can get very high. Some of the other symptoms that may occur are:</span>
+									<ul>
+										<li>Cough, runny nose, and red eyes</li>
+										<li>Rash of tiny, red spots that start at the head and spread to the rest of the body</li>
+										<li>Diarrhea</li>
+										<li>Ear infection</li> 
+									</ul>
+								<div class="row">
+										<div class="col-md-2"></div>
+										<div class="col-md-7 measles-pic">
+											<img src="images/measles_reversedModal.png" class="img-responsive modal-pics">
+										</div>
+								</div>
+								<br>
+								<br>
+									<span class="measles-header2">Is it serious?</span>
+								<br>
+								<br>
+									<span>Measles can be dangerous, especially for babies and young children. From 2001-2013, 28% of children younger than 5 years old who had measles had to be treated in the hospital. For some children, measles can lead to:</span>
+									<ul>
+									 	<li>Pneumonia (a serious lung infection)</li>
+										<li>Lifelong brain damage</li>
+										<li>Deafness</li>
+										<li>Death</li>
+									</ul>
+								</div><!-- end Measles first col first row -->
+								<div class="col-md-6"><!-- Measles second col first row --> 
+									<span class="measles-header2">How does measles spread?</span>
+								<br>
+								<br>
+									<span>Measles spreads when a person infected with the measles virus breathes, coughs, or sneezes. It is very contagious. You can catch measles just by being in a room where a person with measles has been, up to 2 hours after that person is gone. And you can catch measles from an infected person even before they have a measles rash. Almost everyone who has not had the MMR shot will get measles if they are exposed to the measles virus.</span>
+									<div class="row">
+										<div class="col-md-1"></div>
+										<div class="col-md-10 measles-pic">
+											<img src="images/virusesEyes-01Modal.png" class="img-responsive modal-pics">
+										</div>
+									</div>
+								<br>
+									<span class="measles-header2">Why should my child get the MMR shot?</span>
+								<br>
+								<br>
+									<span>The MMR shot:</span>
+									<ul>
+										<li>Protects your child from measles, a potentially serious disease (and also protects against mumps and rubella)</li>
+										<li>Prevents your child from getting an uncomfortable rash and high fever from measles</li>
+										<li>Keeps your child from missing school or childcare (and keeps you from missing work to care for your sick child)</li>
+									</ul>
+									<span class="measles-header2">Is the MMR shot safe?</span>
+								<br>
+								<br>
+									<span>Yes. The MMR shot is very safe, and it is effective at preventing	measles (as well as mumps and rubella). Vaccines, like any medicine, can have side effects. But most children who get the MMR shot have no side effects.</span>
+								<br>
+								<br>
+								</div><!-- end Measles second col first row -->		
+							</div>
+						<hr>
+							<div class="row"><!--Measles second row-->
+								<div class="col-md-6"><!-- Measles first col second row -->  
+										<span class="measles-header2">What are the side effects?</span>
+								<br>
+								<br>
+									<span>Most children do not have any side effects from the shot. The side effects that do occur are usually very mild, such as a fever or rash. More serious side effects are rare. These may include high fever that could cause a seizure (in about 1 person out of every 3,000 who get the shot) and temporary pain and stiffness in joints (mostly in teens and adults).</span>
+								<br>
+								<br>
+									<span class="measles-header2">Is there a link between the MMR shot and
+									autism?</span>
+								<br>
+								<br>
+									<span>No. Scientists in the United States and other countries have carefully studied the MMR shot. None has found a link between autism and the MMR shot.</span>
+								<br>
+								<br>
+									<span class="measles-header2">Where do measles cases in the United States come from?</span>
+								<br>
+								<br>
+									<span>Measles disease can come into this country when unvaccinated U.S. residents travel internationally or foreign visitors to the United States are exposed to measles in another country and travel into the United States. The risk of getting measles may be very high for unvaccinated U.S. residents who travel abroad.</span>
+								</div><!-- end Measles first col second row -->
+								<div class="col-md-6"><!-- Measles second col second row -->  
+								<span> The reason for this high risk is because measles is common in other parts of the world, including countries in Europe, Asia, the Pacific, and Africa. Worldwide, about 20 million people get measles each year. When people with measles travel into the United States, they can spread the disease to unvaccinated people including children too young to be vaccinated.</span>
+								<br>
+								<br>
+									<span class="measles-header2">How many measles cases are there in the United States each year?</span>
+								<br>
+								<br>
+									<span>From 2001 to 2013, the number of measles cases reported in the United States ranged from 37 to 220. However, in some years like 2014, there were more measles cases than usual. In 2014, 668 people from 27 states were reported as having measles. Most of these people got measles in the United States after being exposed to someone who got measles while in another country. So far in 2015, more than 170 people in the U.S. have been reported to have measles. Most of these cases were part of a large outbreak linked to an amusement park in California. For more information, see http://www.cdc.gov/measles/cases-outbreaks.html.</span>
+								</div><!-- end Measles second col second row --> 			
+							</div><!-- end Measles second row -->						
+					<footer class="virus-footer">
+						<div class="row modal-row">
+							<div class="col-md-10">
+								<span>To learn more about the MMR shot, talk to your child’s doctor, call 1-800-CDC-INFO, or visit <a href="#">www.cdc.gov/vaccines/parents</a>.</span>
+							</div>
+							<div class="col-md-2">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+				 	</footer>
+				</div>
+			  </div>
+			</div>		
+		</div>			
+		<!-- Modal -->
+			<div class="modal fade bs-example-modal-lg" id="influenza" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content flu-frame">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+							<span class="modal-title flu-header1" id="myModalLabel">Influenza:</span><span class="flu-header2"> A Guide For Parents</span>
+							<h6 class="cdc-attribution">Information provided by the Center for Disease Control.</h6>
+						</div>
+						<div class="modal-body body-copy">
+							<div class="row"><!-- first row -->
+								<div class="col-md-6"><!-- first col of first row -->
+									<span class="fluCaption flu-header2">FLU INFORMATION</span>
+								<br>
+								<br>
+									<span class="flu-header2">What is the flu?</span>
+								<br>								
+									<span>Influenza (the flu) is an infection of the nose, throat, and lungs caused by influenza viruses. There are many different influenza viruses that are constantly changing. They cause illness, hospital stays and deaths in the United States each year. The flu can be very dangerous for children. Each year about 20,000 children younger than 5 years old are hospitalized from flu complications, like pneumonia.</span>
+								<br>
+								<br>
+									<span class="flu-header2">How serious is the flu?</span>
+								<br>
+									<span>Flu illness can vary from mild to severe. While the flu can be serious even in people who are otherwise healthy, it can be especially dangerous for young children and children of any age who have certain long term health conditions, including asthma (even mild or controlled), neurological and neurodevelopmental conditions, chronic lung disease, heart disease, blood disorders, endocrine disorders (such as diabetes), kidney, liver, and metabolic disorders, and weakened immune systems due to disease or medication. Children with these conditions and children who are receiving long-term aspirin therapy can have more severe illness from the flu.</span>			
+								<br>
+								<br>
+									<span class="flu-header2">How does the flu spread?</span>
+								<br>
+									<span>Most experts believe that flu viruses spread mainly by droplets made when people with the flu cough, sneeze or talk. These droplets can land in the mouths or noses of people who are nearby. Less often, a person might get the flu by touching something that has flu virus on it and then touching their own mouth, eyes or nose.</span>
+								<br>
+								<br>
+									<span class="flu-header2">What are the symptoms of the flu?</span>
+								<br>
+									<span>Symptoms of the flu can include fever, cough, sore throat, runny or stuffy nose, body aches, headache, chills, fatigue and sometimes vomiting and diarrhea. Some people with the flu will not have a fever.</span>
+								<br>
+								<br>								
+									<span class="flu-header2">How long can a sick person spread the flu to others?</span>
+								<br>
+									<span>People with the flu may be able to infect others by shedding virus from 1 day before getting sick to 5 to 7 days after. However, children and people with weakened immune systems can shed virus for longer, and might be still contagious past 5 to 7 days of being sick, especially if they still have symptoms.</span>
+								<br>								
+								<br>								
+									<span class="flu-header2">Can my child go to school, day care or camp if he or she is sick?</span>
+								<br>
+									<span>No. Your child should stay home to rest and to avoid giving the flu to other children or caregivers.</span>
+								</div><!-- end first col of first row -->								
+								<div class="col-md-6"><!-- second col of first row -->
+									<span class="flu-header2">When can my child go back to school after having the flu?</span>
+								<br>
+									<span>Keep your child home from school, day care or camp for at least 24 hours after their fever is gone. (Fever should be gone without the use of a fever-reducing medicine.) A fever is defined as 100°F (37.8°C) or higher.</span>
+								<br>
+								<br>
+
+									<span class="flu-header2">How can I protect my child against the flu?</span>
+								<br>
+									<span>To protect against the flu, the first and most important thing you can do is to get a flu vaccine for yourself and your child.</span>
+									<ul>
+										<li>Vaccination is recommended for everyone 6 months
+										and older.</li>
+										<li>It’s especially important that young children and children with long term health conditions get vaccinated. (See list of conditions under “How Serious is the Flu?”)</li>
+										<li>Caregivers of children with health conditions or of children younger than 6 months old should get vaccinated. (Babies younger than 6 months are too young to be vaccinated themselves.)</li>		
+										<li>Another way to protect babies is to vaccinate pregnant women because research shows that this gives some protection to the baby both while the woman is pregnant and for a few months after the baby is born.</li>
+									</ul>
+									<span>A new flu vaccine is made each year to protect against the three flu viruses that research indicates are most likely to cause illness during the next flu season. Flu vaccines are made using strict safety and production measures. Over the years, millions of flu vaccines have been given in the United States with a very good safety record.</span>
+								<div class="row">
+									<div class="col-md-1"></div>
+								<div class="col-md-10 flu-pic">
+										<img src="images/FluModal.png" class="img-responsive modal-pics">
+									</div>
+								</div>
+								</div><!-- end of second col of first row-->
+							</div><!-- end of first row -->
+							<br>
+							<hr />
+							<div class="row"><!-- second row -->
+								<div class="col-md-6"><!-- first col of second row -->
+									<span class="flu-header2">What should I use	for hand washing?</span>
+								<br>
+									<span>Washing hands with soap and water (for as long as it takes to sing the “Happy Birthday” song twice) will help protect against many germs. If soap and water are not available, use an alcohol-based hand rub</span>
+								<br>
+								<br>
+									<span class="flu-header2">What are some of the other ways I can protect my child against the flu?</span>
+								<br>
+									<span>In addition to getting vaccinated, take – and encourage your child to take everyday steps that can help prevent the spread of germs.</span>
+								<br>
+									<span>This includes:</span>
+									<ul>
+										<li>Cover coughs and sneezes with a tissue. Throw the tissue in the trash after you use it.</li>
+										<li>Stay away from people who are sick.</li>											
+										<li>Wash hands often with soap and water. If soap and water are not available, use an alcohol-based hand rub.</li>											
+										<li>Avoid touching your eyes, nose and mouth. Germs spread this way.</li>											
+										<li>If someone in the household is sick, try to keep the sick person in a separate room from others in the household, if possible.</li>											
+										<li>Keep surfaces like bedside tables, surfaces in the bathroom, kitchen counters and toys for children clean by wiping them down with a household disinfectant according to directions on the product label.</li>											
+										<li>Throw tissues and other disposable items used by sick persons in your household in the trash.</li>
+									</ul>
+									<span>These everyday steps are a good way to reduce your chances of getting all sorts of illnesses, but a yearly flu vaccine is always the best way to specifically prevent the flu.</span>
+								<br>
+								<br>
+									<span class="flu-header2">What can I do if my child gets sick?</span>
+								<br>
+									<span>Talk to your doctor early if you are worried about your child’s illness.</span>
+									<span>If your child is 5 years and older and does not have other health problems and gets flu-like symptoms, including a fever and/or cough, consult your doctor as needed and make sure your child gets plenty of rest and drinks enough fluids.</span>
+									<span>If your child is younger than 5 years (and especially younger than 2 years) or of any age with a long term health condition (like asthma, a neurological</span>
+								<br>
+								<br>
+								</div><!-- end first col of second row -->								
+								<div class="col-md-6"><!-- second col of second row -->									
+									<span> condition, or diabetes, for example) and develops flu-like symptoms, they are at risk for serious complications from the flu. Ask a doctor if your child should be examined.</span>
+								<br>
+								<br>
+									<span class="flu-header2">What if my child seems very sick?</span>
+								<br>
+									<span>Even children who have always been healthy before or had the flu before can get very sick from the flu.</span>
+								<br>
+								<br>
+									<span>Call for emergency care or take your child to a doctor right away if your child of any age has any of the warning or emergency signs below:</span>
+									<ul>	
+										<li>Fast breathing or trouble breathing</li>											
+										<li>Bluish or gray skin color</li>											
+										<li>Not drinking enough fluids
+										(not going to the bathroom or making
+										as much urine as they normally do)</li>	
+										<li>Severe or persistent vomiting</li>
+										<li>Not waking up or not interacting</li>
+										<li>Being so irritable that the child
+										does not want to be held</li>	
+										<li>Flu-like symptoms improve but then
+										return with fever and worse cough</li>	
+										<li>Has other conditions (like heart or lung disease,
+										diabetes,or asthma) and develops flu symptoms,
+										including a fever and/or cough.</li>
+									</ul>
+								<br>
+									<span class="flu-header2">Is there a medicine to treat the flu?</span>
+								<br>
+									<span>Antiviral drugs can treat flu illness. They can make people feel better and get better sooner and may prevent serious flu complications, like pneumonia, for example, that can lead to hospitalization and even death. These drugs are different from antibiotics, but they also need to be prescribed by a doctor. They work best when started during the first 2 days of illness. It’s very important that antiviral drugs be used early to treat the flu in people who are very sick (for example people who are in the hospital) or people who are at greater risk of having serious flu complications. Other people with flu illness may also benefit from taking antiviral drugs. These drugs can be given to children andpregnant women.</span>								
+								</div><!-- end second col of second row -->
+								<div class="col-md-12"><!-- third col of first row -->
+								</div><!-- end of third col of first row -->
+							</div><!-- end of second row -->
+				    <footer class="virus-footer">
+						<div class="row modal-row">
+							<div class="col-md-10">
+								<span>To learn more about the Influenza shot, talk to your child’s doctor, call 1-800-CDC-INFO, or visit <a href="#">www.cdc.gov/vaccines/parents</a>.</span>
+							</div>
+							<div class="col-md-2">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+				 	</footer>
+				</div>
+			  </div>
+			</div>		
+		</div>
+		<div class="modal fade bs-example-modal-lg" id="polio" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content polio-frame">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+							<h4 class="modal-title polio-header1" id="myModalLabel">Polio and the Vaccine (Shot) to Prevent It</h4><h6 class="cdc-attribution">Information provided by the Center for Disease Control. <br>Last updated February 2014</h6>
+						</div>
+						<div class="modal-body body-copy">
+							<div class="row"><!--Polio first row-->
+								<div class="col-md-6"><!-- Polio first col first row -->  
+									<span class="polio-header2">POLIO INFORMATION</span>
+									<br>
+									<br>
+									<span>The best way to protect against polio is to get the polio vaccine. Doctors recommend that all children get the vaccine, also called IPV (or inactivated poliovirus).</span>
+									<br>
+									<br>
+									<span class="polio-header2">Why should my child get the polio shot?</span>
+								<br>
+									<span>The polio shot:</span>
+									<ul>
+										<li>Protects your child from polio, a potentially serious disease</li>
+										<li>Prevents your child from developing lifelong paralysis from polio</li>
+									</ul>
+									<span class="polio-header2">Is the polio shot safe?</span>
+								</br>
+									<span>Yes. The polio vaccine is very safe and effective at preventing polio. Vaccines, like any medicine, can have side effects. Most children who get the polio shot have no side effects.</span>
+								<br>
+									<div class="row">
+										<div class="col-md-1"></div>
+									<div class="col-md-10 polio-pic">
+										<img src="images/PolioModal.png" class="img-responsive modal-pics">
+									</div>
+									</div>
+								<br>
+									<span class="polio-header2">What are the side effects?</span> 
+								<br>
+									<span>When side effects do occur, they are usually mild, like temporary redness and pain at the injection site.</span>
+								<br>
+								</div><!-- end Polio first col first row --> 				
+								<div class="col-md-6"><!-- Polio second col first row -->  								
+									<span class="polio-header2">What is polio?</span>
+								<br>
+									<span>Polio (or poliomyelitis) is a disease caused by poliovirus. It
+									can cause lifelong paralysis (can’t move parts of the body),
+									and it can be deadly.</span>
+								<br>
+								<br>
+									<span class="polio-header2">What are the symptoms of poliovirus infection?</span>
+								<br>									
+									<span>Most people who get infected with poliovirus do not have any symptoms. Some people (24 people out of 100) will have flu-like	symptoms. These symptoms usually last 2 to 5 days then go away on their own. In rare cases, poliovirus infection can be very serious. About 1 out of 100 people will have weakness or paralysis in their arms, legs, or both. This paralysis or weakness can last a lifetime.</span>
+								<br>
+								<br>
+									<span class="polio-header2">Is it serious?</span>
+								<br>
+									<span>The risk of lifelong paralysis is very serious. Even children who seem to fully recover can develop new muscle pain, weakness, or paralysis as adults, 30 or 40 years later. About 2 to 5 children out of 100 who have paralysis from polio die because the virus affects the muscles that help them breathe.</span>
+								<br>
+								<br>
+									<span class="polio-header2">How does polio spread?</span>
+								<br>
+									<span>Poliovirus is very contagious. It spreads through contact with the stool of an infected person and droplets from a sneeze or
+									cough. If you get stool or droplets from an infected person on your hands and you touch your mouth, you can get infected. Also, if you put objects, like toys that have stool or droplets on them, into your mouth, you can get infected.</span>
+								<br>
+									<span>An infected person may spread the virus to others
+									immediately before, and usually 1 to 2 weeks after,
+									developing symptoms. The virus may live in an infected
+									person’s stool for many weeks. It can contaminate food and
+									water when people do not wash their hands.</span>
+								<br>
+								<br>
+									<span class="polio-header2">Do people still get polio in the United
+									States?</span>
+									<br>
+									<span>No, the United States has been polio free for more than 30 years, but the disease is still occurring in other parts of the world. It would only take one traveler with polio from another country to bring polio back to the United States.</span>
+								</div><!-- end Polio second col first row --> 			
+							</div><!-- end Polio first row -->
+							<br>
+							<div class="row"><!--Polio second row-->		
+								<div class="col-md-6">
+
+								</div><!-- end Polio first col second row -->
+								<div class="col-md-6"><!-- Polio second col second row -->	
+								</div><!-- end Polio second col second row -->
+							</div><!-- end Polio second row -->
+					<footer class="virus-footer">
+						<div class="row modal-row">
+							<div class="col-md-10">
+								<span>To learn more about the polio shot, talk to your child’s doctor, call 1-800-CDC-INFO, or visit <a href="#">www.cdc.gov/vaccines/parents</a>.</span>
+							</div>
+							<div class="col-md-2">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
+						</div> 
+				 	</footer>
+				</div>
+			  </div>
+			</div>		
+		</div>	<!--end modal-->				
 		<script type="text/javascript" src="lib/jquery-2.1.3/jquery.js"></script>
-  </head>
-<body>
-	<div class="container-fluid body">
-		<div class="jumbotron">
-			<div class="row top">
-				<div class="col-md-3">
-					<img src="images/Chickenpox.png" class="poxpx btm-img img-responsive"></div>
-				<div class="col-md-6 page-head">WELCOME TO <br>
-					<div class="caption">Disease History Interactive Map</div>
-				</div>
-				<div class="col-md-3">
-					<img src="images/Polio.png" class="poliopx btm-img img-responsive">
-				</div>
-			</div><!--end row--> 
-			<div class="row text-row body-copy"><!-- first row -->
-				<div class="col-md-3 placeholder"></div>
-				<div class="col-md-3 para1"><!--left col -->
-					<div class="para1">
-						Chickenpox, Measles, Influenza and Polio have afflicted children in the United States throughout history. Many of these diseases are entirely preventable. Here at the Project Tycho - San Quentin Code 7370 collaboration, users can view data in interactive formats that are easy, informative and efficient. 
-					</div>
-				</div>
-				<div class="col-md-3 para2">
-					<div class="para2">
-						<img src="images/Flu.png" class="flupx btm-img img-responsive">
-						To learn more information on these diseases, their respective histories as well as historical vaccination and prevention efforts click bellow.
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-3">
-					<img src="images/measles_reversed.png" class="measlespx btm-img img-responsive">
-				</div>
-				<div class="col-md-9 btn-row">
-						<a href="index.html"class="btn btn-landing" id="clrBtn" role="button">CONTINUE TO MAP</a>
-				</div>
-			</div>
-			<footer class="footer-logos logos">				
-					<div class="col-xs-3">
-						<a href="http://Tycho®.html"><img src="images/tychologo.png" class="logo-img img-responsive tycho" alt="Responsive image"></a>
-					</div>
-					<div class="col-xs-3">
-						<a href="http://thelastmile.org"><img src="images/tlmlogo.png" class="lastmile logo-img img-responsive" alt="Responsive image"></a>
-					</div>
-					<div class="col-xs-3">
-						<a href="7370.html"><img src="images/code7370.jpg" class=" code7370 logo-img img-responsive" alt="Responsive image"></a>
-					</div>
-					<div class="col-xs-3">
-						<a href="http://cdcr.gov"><img src="images/calPia.png" class="calPia logo-img img-responsive" alt="Responsive image"></a>
-					</div>		
-			</footer><!--end Footer-->
-		</div><!-- end jumbotron -->
-	</div><!-- end container -->
-	<script type="text/javascript" src="lib/bootstrap-3.3.5/js/bootstrap.js"></script>
-</body>
+		<script type="text/javascript" src="lib/bootstrap-3.3.5/js/bootstrap.js"></script>
+		<script type="text/javascript" src="lib/js/tyco_script.js"></script>
+		<script type="text/javascript" src="lib/js/tyco_script_two.js"></script>
+	</body>
 </html>

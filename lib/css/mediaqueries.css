@@ -19,7 +19,6 @@ modals
 }
 .virus-footer {
 	border-top: .1em solid gray;
-	/*padding-bottom: .5em;*/
 }
 .modal-row {
 	padding-left: .3em;
@@ -28,12 +27,11 @@ modals
 }
 .pox-frame {
 	background-color: rgba(255, 255, 255, 0.90);
-	/*border: 2px solid #50e3c2;*/
 	border-radius: 2px; 
 }
 .pox-header1 {
 	font-family: Museo-700;
-	font-size: 250%;
+	font-size: 200%;
 	color: #50e3c2;
 	line-height: 22px;
 }
@@ -46,10 +44,8 @@ modals
 }
 .pox-pic {
 	margin-top: .5em;
-	/*border: 2px solid #50e3c2;*/
 	padding: 0;
 }
-/*measles*/
 .measles-frame {
 	background-color: rgba(255, 255, 255, 0.90);
 	/*border: 2px solid #9eda62;*/
@@ -57,7 +53,7 @@ modals
 }
 .measles-header1 {
 	font-family: Museo-700;
-	font-size: 250%;
+	font-size: 200%;
 	color: #9eda62;
 	line-height: 22px;
 }
@@ -79,7 +75,7 @@ modals
 }
 .flu-header1 {
 	font-family: Museo-700;
-	font-size: 250%;
+	font-size: 200%;
 	color: #4a90e2;
 	line-height: 22px;
 }
@@ -100,7 +96,7 @@ modals
 }
 .polio-header1 {
 	font-family: Museo-700;
-	font-size: 250%;
+	font-size: 200%;
 	color: #d44ff0;
 	line-height: 22px;
 }
@@ -115,7 +111,6 @@ modals
 	margin-top: .8em;
 	padding: 0;
 }
-
 /*
 =================================================
 media queries
@@ -165,6 +160,9 @@ media queries
 		width: 20%;
 		font-size: 1.7em;
 	}
+	.mid-Text {
+		display: none;
+	}
 	.selections {
 		margin-left: 1%;
 		margin-bottom: 1%;
@@ -173,12 +171,14 @@ media queries
 	}
 	.stats-holder {
 		top: 137px;
-		margin-left: 35px;
+		margin-left: 40px;
+	}
+	.copy {
+		font-size: 1em;
 	}
 	.stats-holder-two {
 		top: 130px;
-		margin-left: 25px;
-
+		margin-left: 20px;
 	}
 
 	.legend-holder {
@@ -207,7 +207,7 @@ media queries
 	}
 	.btn-container {
 		top: 331px;
-		left: 45px;
+		left: 63px;
 	}
 	#pre-txt {
 		font-size: .9rem;
@@ -222,7 +222,6 @@ media queries
 		font-size: .7rem;
 	}
 }
-
 @media only screen and (min-width:750px) and (max-width: 800px) {
 	.bodytwo {
 		font-size: 1.9rem;
@@ -289,10 +288,8 @@ media queries
 	}
 	.modal-pics {
 		margin-left: 12px;
-	}
-	
+	}	
 }
-
 @media only screen and (min-width:1020px) and (max-width: 1035px) {
 	.selections {
 		width: 100%;
@@ -354,5 +351,4 @@ media queries
 		top: 344px;
 		left: -9px;
 	}
-
 }

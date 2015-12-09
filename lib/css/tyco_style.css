@@ -16,30 +16,31 @@ formating
 =================================================
 */
 @font-face {
-font-family: 'Museo-700';
-src: url('../Museo/Museo_Slab_700.otf'); 
+	font-family: 'Museo-700';
+	src: url('../Museo/Museo_Slab_700.otf');
+	font-size: 16px; 
 }
 @font-face {
-font-family: 'Museoitalic';
-src: url('../Museo/Museo_Slab_500italic.otf'); 
-font-size: 100%;
+	font-family: 'Museoitalic';
+	src: url('../Museo/Museo_Slab_500italic.otf'); 
+	font-size: 16px;
 }
 @font-face {
-font-family: 'Museo-500';
-src: url('../Museo/exljbris - MuseoSans-500.otf'); 
-font-size: 100%;
+	font-family: 'Museo-500';
+	src: url('../Museo/exljbris - MuseoSans-500.otf'); 
+	font-size: 16px;
 }
 @font-face {
-font-family: 'Museo';
-src: url('../Museo/MuseoSans_500.otf'); 
-font-size: 100%;
+	font-family: 'Museo';
+	src: url('../Museo/MuseoSans_500.otf'); 
+	font-size: 16px;
 }
 img {
 	width: 100%;
 }
 body {
 	font-family: 'Museo-500', 'Museo-700', 'Museoitalic', 'Museo';
-	font-size: 100%;
+	font-size: 16px;
 }
 .clear-padding-left {
 	padding-left: 0;
@@ -62,9 +63,9 @@ body {
 .shadow {
 	width: 100%;
 	height: 547px;
-	-webkit-filter: drop-shadow( 0px 5px 5px rgba(0, 0, 0, 0.5));
-		 -moz-filter:drop-shadow( 0px 5px 5px rgba(0, 0, 0, 0.5));
-				  filter: drop-shadow( 0px 5px 5px rgba(0, 0, 0, 0.5));
+	-webkit-filter: drop-shadow( 0px 5px 5px rgba(0, 0, 0, 0.1));
+		 -moz-filter:drop-shadow( 0px 5px 5px rgba(0, 0, 0, 0.1));
+				  filter: drop-shadow( 0px 5px 5px rgba(0, 0, 0, 0.1));
 
 }
 /*
@@ -259,7 +260,7 @@ board section
 }
 .stats-holder {
  position: absolute;
- top: 90px;
+ top: 60px;
  left: 20px;
  text-align: center;
  font-family: Museo-700;
@@ -268,12 +269,12 @@ board section
 }
 .stats-holder-two {
  position: absolute;
- top: 90px;
+ top: 60px;
  left: 20px;
  text-align: center;
  font-family: Museo-700;
  min-height: 406px;
- z-index; 1;
+ z-index: 1;
 }
 .btn-container {
 	position: absolute;
@@ -292,7 +293,7 @@ board section
 }
 .legend-holder {
  position: absolute;
- top: 90px;
+ top: 60px;
  right: 20px;
  text-align: center;
  font-family: Museo-700;
@@ -310,10 +311,11 @@ board section
 .panel-body {
 	margin-top: 0;
 	padding-top: 0;
+	min-height: 130px;
 }
 .cases {
 	text-align: center;
-	font-size: 5.1rem;
+	font-size: 3.5em;
 	color: #605E61;
 	margin-top: 10px;
 }
@@ -327,14 +329,14 @@ tooltip
 	position: absolute;
 	bottom: 0;
 	right: 0;
-	z-index: 2;
+	z-index: 20;
 }
 #data-box-two {
 	text-align: center;
 	position: absolute;
 	bottom: 0;
 	right: 0;
-	z-index: 2;
+	z-index: 20;
 }
 .tip {
 	font-family: Museo;
@@ -368,6 +370,7 @@ tooltip
   border-color:#5a8f00 transparent;
   display:block;
   width:0;
+  z-index: 20;
 }
 .triangle-border:after {
   content:"";
@@ -379,22 +382,25 @@ tooltip
   border-color:#fff transparent;
   display:block;
   width:0;
+  z-index: 20;
 }
 .triangle-border.right:before {
-  top:23px; /* controls vertical position */
+  top:21px; /* controls vertical position */
   bottom:auto;
   left:auto;
   right:-30px; /* value = - border-left-width - border-right-width */
   border-width:15px 0 15px 30px;
   border-color:transparent #656c71;
+  z-index: 20;
 }
 .triangle-border.right:after {
-  top: 24px; /* value = (:before top) + (:before border-top) - (:after border-top) */
+  top: 22px; /* value = (:before top) + (:before border-top) - (:after border-top) */
   bottom:auto;
   left:auto;
-  right:-26px; /* value = - border-left-width - border-right-width */
-  border-width:13px 0 13px 26px;
+  right:-28px; /* value = - border-left-width - border-right-width */
+  border-width:14px 0 14px 28px;
   border-color:transparent #fff;
+  z-index: 20;
 }
 #data-box > p {
 	margin: 0;
@@ -466,6 +472,7 @@ slider section
 	padding-top: 5px;
 	height: 60px;
 	padding-left: 1%;
+	z-index: 1;
 }
 .pre-Text {
 	position: absolute;
@@ -479,6 +486,16 @@ slider section
 	position: absolute;
 	bottom: 0;
 	right: 0;
+}
+.mid-Text {
+	text-align: center;
+	padding-right: 10%;
+	position: absolute;
+	bottom: 4em;
+	right: 27%;
+}
+.slider-info {
+	z-index: 2;
 }
 .sub-header {
 	font-family: Museoitalic;
@@ -585,7 +602,6 @@ input[type=range]::-ms-fill-upper {
   border-radius: 2.6px;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }
-
 input[type=range]::-ms-thumb {
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   border: 1px solid #000000;
@@ -598,7 +614,6 @@ input[type=range]::-ms-thumb {
 input[type=range]:focus::-ms-fill-lower {
   background: #3071a9;
 }
-
 input[type=range]:focus::-ms-fill-upper {
   background: #367ebd;
 }
@@ -608,7 +623,7 @@ input[type=range]:focus::-ms-fill-upper {
 */
 .pox-triangle {
 	position: absolute;
-  left: 45.5%;
+  left: 42.5%;
   top: -85px;
 }
 .flu-triangle {
@@ -621,7 +636,6 @@ input[type=range]:focus::-ms-fill-upper {
   left: 52%;
   top: -108px;
 }
-
 .triangle-isosceles {
 	text-align: center;
   padding:15px;
@@ -676,14 +690,12 @@ info section
 	font-family: Museo-700;
 	font-size: 1.9rem;
 	color: #4e4d4e;
-	line-height: 22px;
+	line-height: 20px;
 }
 .txt-panel {
 	padding-top: 20px;
 	opacity: 0.89;
 	background: #ffffff;
-	/*border: 1px solid #ffffff;*/
-	/*box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.20);*/
 	border-radius: 2px;
 }
 .bodytwo {
@@ -717,22 +729,30 @@ info section
 .pox {
 	color: #50e3c2;
 	font-family: Museo-700;
-	font-size: 18px;
+	font-size: 1.9rem;
+	line-height: 20px;
+	float: left;
 }
 .msls {
 	color: #9eda62;
 	font-family: Museo-700;
-	font-size: 18px;
+	font-size: 1.9rem;
+	line-height: 20px;
+	float: left;
 }
 .flu {
 	color: #4a90e2;
 	font-family: Museo-700;
-	font-size: 18px;
+	font-size: 1.9rem;
+	line-height: 20px;
+	float: left;
 }
 .pol {
 	color: #d44ff0;
 	font-family: Museo-700;
-	font-size: 18px;
+	font-size: 1.9rem;
+	line-height: 20px;
+	float: left;
 }
 /*
 =================================================

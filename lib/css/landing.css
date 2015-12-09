@@ -1,0 +1,226 @@
+/* ///////////////////////all css select ///////////////////////////*/
+@-webkit-viewport {width: device-width; scale: 1; }
+@-moz-viewport {width: device-width; scale: 1; }
+@-ms-viewport {width: device-width; scale: 1; }
+@-o-viewport {width: device-width; scale: 1; }
+@viewport {width: device-width; scale: 1; }
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+/*
+=================================================
+formating
+=================================================
+*/
+@font-face {
+font-family: 'Museo-700';
+src: url('../Museo/Museo_Slab_700.otf'); 
+font-size: 16px;
+}
+@font-face {
+font-family: 'Museoitalic';
+src: url('../Museo/Museo_Slab_500italic.otf'); 
+font-size: 16px;
+}
+@font-face {
+font-family: 'Museo-500';
+src: url('../Museo/exljbris - MuseoSans-500.otf'); 
+font-size: 16px;
+}
+@font-face {
+font-family: 'Museo';
+src: url('../Museo/MuseoSans_500.otf'); 
+font-size: 16px;
+}
+img {
+	width: 100%;
+}
+body {
+	font-family: 'Museo-500', 'Museo-700', 'Museoitalic', 'Museo';
+	background-color: #8de2ec;
+	font-size: 16px;
+}
+/*
+=================================================
+landing page
+=================================================
+*/
+.center {
+	text-align: center;
+}
+.page-top {
+	margin-top: 3%;
+}
+.margin-top {
+	margin-top: 1%;
+}
+#header1 {
+	font-family: Museo-700;
+	font-size: 1.97rem;
+	color: #4e4d4e;
+	line-height: .8em;
+	margin-top: 4rem;
+	padding-right: 5%;
+}
+#header2 {
+	font-family: Museoitalic;
+	font-size: 1.5em;
+	color: #605e61;
+	margin-top: 2rem; 
+	letter-spacing: 1px;
+	line-height: 1em;
+	padding-right: 5%;
+}
+.body-copy {
+	font-family: Museo;
+	font-size: 1.6rem;
+	color: #6f6c71;
+	letter-spacing: 1.04px;
+	line-height: 1.15em;
+}
+#footer-txt {
+	font-family: Museoitalic;
+	font-size: 1.35em;
+	color: #605e61;
+	margin-top: 2rem; 
+	letter-spacing: 1px;
+	line-height: 31px;
+}
+.jumbotron {
+	background-color: #fff;
+	max-width: 85%;
+	height: auto;
+	margin-bottom: 1em;
+	margin-top: 3em;
+	margin-right: auto;
+	margin-left: auto;
+	padding: .1em;
+}
+.jumbotron p {
+	font-size: 100%;
+
+}
+.para
+.pic-size {
+	width: 35%;
+}
+.fpic-size {
+	width: 35%;
+	margin-left: 5%;
+}
+.mpic-size {
+	width: 35%;
+	margin-top: 2%
+}
+.right-txt {
+  padding-right: 10%;
+}
+.left-txt {
+  padding-left: 10%;
+}
+.btm-img {
+	width: 55%;
+	margin-left: 20%;
+}
+.btn-landing {
+	width: auto;
+	height: auto;
+	background: #FFFFFF;
+	font-family: Museo-700;
+	color: #4e4d4e;
+	border-radius: 4px;
+	border: 1px solid #4E4d4E;
+	margin-top: 7%;
+	margin-left: 9%;
+	margin-bottom: 3%;
+	font-size: 1.35em;
+}
+.btn-landing:hover {
+	color: #ffffff;
+	background: #ab0216;
+}
+.border {
+	border-top: 1px solid #dfd3d3;
+}
+@media (min-device-width: 320px) and (max-device-width: 600px) {
+	.ppic, 
+	.mpic-size {
+		display: none;
+	}
+	.fpic-size {
+		margin-bottom: 6%;
+		margin-left: 182%;
+	}
+	#header1 {
+	font-size: 1.2rem;
+	line-height: .8em;
+	margin-top: 2em;
+}
+	#header2 {
+		font-size: 1.4rem;
+		margin-top: 2rem; 
+		letter-spacing: 1px;
+		line-height: 1em;
+	}
+	.body-copy {
+		font-size: 1.2rem;
+		letter-spacing: 1.04px;
+		padding: 0 2% 0 2%;
+	}
+	.btn-landing {
+		font-size: 1.2rem;
+		margin: 2% 0 3% -19%;
+	}
+	.btm-img {
+		width: 85%;
+		margin-left: 0;
+	}
+	
+	#footer-txt {
+		font-size: 1.2rem;
+		margin-top: 1em; 
+		letter-spacing: 1px;
+		line-height: 1.3em;
+	}
+}
+
+@media (min-device-width: 610px) and (max-device-width: 770px){
+	.pic-size {
+		width: 55%;
+	}
+	.fpic-size {
+		margin-left: 155%;
+	}
+	.mpic-size {
+		width: 55%;
+		margin-top: -8%;
+	}
+	.btn-landing {
+		font-size: 1.2rem;
+		margin-left: -1%;
+		margin-top:;
+	}
+	.para1,
+	.para2 {
+		padding-left: 10%;
+	}
+}
+@media (min-device-width: 775px) and (max-device-width: 800px){
+	.fpic-size {
+		margin-left: 238%;
+	}
+	.btn-landing {
+		margin-left: -8%;
+		margin-bottom: 2%;
+	}
+	
+}
+@media (min-device-width: 1020px) and (max-device-width: 1060px){
+	.btn-landing {
+		margin-bottom: 2%;
+		margin-left: -2.5%;
+	}
+}

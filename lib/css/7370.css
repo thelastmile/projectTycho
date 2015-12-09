@@ -46,6 +46,13 @@ p {
 	font-family: Museo;
 	color:#6f6c71;
 }
+.sub-header {
+	font-family: Museoitalic;
+	font-size: 1.9rem;
+	color: #ffffff;
+	letter-spacing: 1px;
+	line-height: 17px;
+}
 .wrapper {
 	font-family: arial;
 	color: #ffffff;
@@ -63,17 +70,21 @@ p {
 	font-weight: 100;
 	color: #ffffff;
 }
-.panel-gray {
-	background-color: #4a90e2;	
+.panel-body {
+	padding-top: 0;
 }
+
 .white-panel {
 	clear: both;
 	background-color: #ffffff;
 	min-height: 29.5em;
 	color: #6f6c71;
 }
+.float {
+	float: right;
+}
 .our-pics {
-	width: 30%;
+	width: 60%;
 	float: right;
 	margin-left: .5em;
 	border: 1px solid #171717;
@@ -86,6 +97,9 @@ p {
 	margin-bottom: 1.4%;
 	margin-right: 0;
 	margin-left: 2%;
+}
+.name-text {
+	color: rgb(141,226,236)
 }
 .footer {
 	width: 100%;
